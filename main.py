@@ -28,3 +28,18 @@ fig.update_geos(
 
 fig.update_layout(height=700, margin={"r":0,"t":50,"l":0,"b":0})
 fig.show()
+
+data = {
+    "Model": ["Linear Regression", "Decision Tree", "Random Forest", "ElasticNet"],
+    "MAE": [1.150246, 0.944960, 1.051216, 1.106351],
+    "MSE": [174.22348, 163.138241, 110.402201, 173.725202],
+    "MAPE": ["2.261138e+15", "1.597036e+15", "1.987033e+15", "2.089191e+15"],
+    "R²": [0.773268, 0.787694, 0.856324, 0.773916]
+}
+
+# Convert to DataFrame
+df = pd.DataFrame(data)
+
+# Display the table
+st.markdown("### Model Performance Metrics")
+st.table(df)
